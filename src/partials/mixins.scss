@@ -1,0 +1,76 @@
+$baseFont: 16;
+// Breakpoints
+$screen-sm-max: 575px;
+$screen-sm-min: 576px;
+$screen-md-max: 767px;
+$screen-md-min: 768px;
+$screen-lg-max: 991px;
+$screen-lg-min: 992px;
+$screen-xl-max: 1279px;
+$screen-xl-min: 1280px;
+
+@function rem($pxWidths) {
+  $remValues: null;
+
+  @each $pxValue in $pxWidths {
+    $remValues: append($remValues, calc($pxValue / $baseFont) + rem);
+  }
+
+  @return $remValues;
+}
+
+// Small devices
+@mixin sm {
+  // min-width: 576px
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin sm-max {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  // min-width: 768px
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin md-max {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  // min-width: 992px
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin lg-max {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  // min-width: 1280px
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin xl-max {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}

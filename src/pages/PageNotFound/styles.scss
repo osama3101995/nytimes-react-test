@@ -1,0 +1,17 @@
+@import "../../partials/mixins.scss";
+
+.pageNotFound {
+    min-height: 60vh;
+    display: flex;
+    margin-bottom: 1.25rem;
+    flex-direction: column;
+    justify-content: center;
+
+
+    h1 {
+        font-weight: 100;
+        font-size: rem(122);
+    }
+    
+
+}
